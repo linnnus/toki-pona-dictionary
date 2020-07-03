@@ -13,7 +13,7 @@ let dict_json = `[
   ],
   "sitelenImgUrl":"https://jonathangabel.com/images/t47_tokipona/t47_nimi/t47_nimi_a.jpg",
   "sitelenImgUrlAlt":"http://tokipona.net/tp/img/t47_nimi_a.jpg",
-  "exampleUses":["aaaaaaaaaaaaaaaa","a fuck a fuck"],
+  "exampleUses":["lorem ipsum","dolor sit amet"],
   "translations":{
     "eng":"well! ha! o! oh!",
     "ita":"bene! ah! oh! oh!",
@@ -3566,4 +3566,9 @@ let dict_json = `[
 }
 ]`;
 
+/*
+* Because the JSON grammar is much simpler than JavaScript’s grammar,
+* JSON can be parsed more efficiently than JavaScript.
+* This (hopefully) improves startup times
+*/
 let dict = JSON.parse(dict_json);
