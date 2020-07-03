@@ -10,13 +10,6 @@ form.onsubmit = e => {
 
 };
 
-submit.addEventListener('click', e => {
-
-  e.preventDefault();
-  search(text.value);
-
-});
-
 search(""); // initial population
 
 function search(term, includeTypes){

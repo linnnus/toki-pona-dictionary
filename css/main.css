@@ -43,20 +43,41 @@ li.entry ul {
   margin-right: .5em;
 }
 
-.search > .submit {
-  width: 24px;
-}
-
 .search {
+  width: max-content;
+  background-color: white;
+
   border: 0;
   padding: 0;
 
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  border-bottom: var(--line-width, 2px) solid var(--light-gray, lightgrey);
+  border-bottom: 2px solid lightgrey;
 }
 
+.search .submit {
+  background-color: white;
+  border: none;
+  padding: 0;
+}
+
+/* remove outline on focus */
+.search .submit:focus {
+  outline: none;
+}
+
+.search .svg {
+  outline: none;
+  fill: dimgrey;
+  width: 25px;
+  padding: 5px;
+  height: auto;
+}
+
+.search > .stuff-container {
+  max-width: 400px;
+}
 
 .search > .text {
   padding-left: 1em;
@@ -90,23 +111,6 @@ body::-webkit-scrollbar {
 
 input.text:focus {
   outline-width: 0;
-}
-
-.search {
-  width: max-content;
-  background-color: white;
-}
-
-.search > .submit {
-  outline: none;
-  fill: dimgrey;
-  width: 25px;
-  padding: 5px;
-  height: auto;
-}
-
-.search > .stuff-container {
-  max-width: 400px;
 }
 
 @media screen and (min-width: 850px) {
