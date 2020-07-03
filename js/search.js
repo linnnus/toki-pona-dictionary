@@ -17,7 +17,7 @@ submit.addEventListener('click', e => {
 
 });
 
-search(""); // initial search 
+search(""); // initial population
 
 function search(term, includeTypes){
   console.log('searching for "' + term + '"');

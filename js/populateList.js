@@ -1,6 +1,3 @@
-// initial population
-pupulateList(dict);
-
 function pupulateList(definitions) {
 
   let list = document.getElementById('list');
@@ -22,7 +19,7 @@ function pupulateList(definitions) {
     word.textContent = entry['word'];
     if (entry['alternatives']) { // add alternatives
       entry['alternatives'].forEach( (item, i) => {
-        // else they wont be sepated by spaces 
+        // else they wont be sepated by spaces
         word.textContent += `, ${entry['alternatives'][i].toString()}`;
       });
     }
