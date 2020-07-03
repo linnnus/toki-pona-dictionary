@@ -1,0 +1,144 @@
+html {
+  font: 14px Helvetica, "Lucida Grande", Arial, sans-serif;
+  color: white;
+}
+
+body {
+  margin: 0;
+  background-color: #a83232
+}
+
+.title {
+  width: fit-content;
+  font-size: 3em;
+  text-align: center;
+}
+
+
+/* add a bit of spacing */
+.content > * {
+  margin: 60px auto 0 auto;
+}
+
+.examples > p {
+  background-color: #912c2c;
+  padding: 5px;
+  border-style: solid;
+  border-color: #912c2c;
+  width: fit-content;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+/* remove list styling on all sublists */
+ul {
+  list-style-type: none;
+}
+li.entry ul {
+  padding: 0;
+}
+
+.list span.type {
+  font-style: oblique;
+  margin-right: .5em;
+}
+
+.search > .submit {
+  width: 24px;
+}
+
+.search {
+  border: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-bottom: var(--line-width, 2px) solid var(--light-gray, lightgrey);
+}
+
+
+.search > .text {
+  padding-left: 1em;
+  border-style: none;
+
+  height: 35px;
+  width: 250px;
+}
+
+/* remove default highlighting in webkit browsers */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  background-color: white !important; /* does not work */
+  -webkit-box-shadow: 0 0 0px 1000px white inset; /* workaround to set color */
+  -webkit-text-fill-color: black;
+}
+
+/* hide scrollbar while retaining functionality*/
+body::-webkit-scrollbar {
+  display:none;
+}
+
+input.text:focus {
+  outline-width: 0;
+}
+
+.search {
+  width: max-content;
+  background-color: white;
+}
+
+.search > .submit {
+  outline: none;
+  fill: dimgrey;
+  width: 25px;
+  padding: 5px;
+  height: auto;
+}
+
+.search > .stuff-container {
+  max-width: 400px;
+}
+
+@media screen and (min-width: 850px) {
+
+  /* in here goes all the centering and stuff for big screens  */
+
+  body {
+    background-color: #32a852
+  }
+
+  .examples > p {
+    background-color: #26803e;
+    border-color: #26803e;
+  }
+
+  .entry {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .word {
+    width: 90px;
+    text-align: left;
+    align-self: baseline;
+    display: block;
+    margin: 0 3em 0 0;
+  }
+
+  .stuff-container {
+    align-self: flex-end;
+    width: 400px;
+  }
+
+}
