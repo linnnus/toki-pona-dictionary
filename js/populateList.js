@@ -1,4 +1,4 @@
-function pupulateList(definitions) {
+function populateList(definitions) {
 
   let list = document.getElementById('list');
 

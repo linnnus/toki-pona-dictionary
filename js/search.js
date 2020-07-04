@@ -60,6 +60,6 @@ function search(term, includeTypes){
   });
 
   console.log('search returned:', res);
-  pupulateList(res);
+  populateList(res);
 
 }
