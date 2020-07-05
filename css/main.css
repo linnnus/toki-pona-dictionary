@@ -20,7 +20,15 @@ body {
 }
 
 div.info {
-  width: 285px;
+  max-width: 285px;
+  width: fit-content;
+}
+
+li.res-notification {
+  margin: 0 auto;
+  font-weight: bold; 
+  text-align: center;
+  margin-left: -40px; /* counter the padding on ul.list*/
 }
 
 /****************************** DEFINITIONS ***********************************/
@@ -163,12 +171,8 @@ body::-webkit-scrollbar {
   }
 
   div.info, li.res-notification {
-    width: 390px;
-  }
-
-  li.res-notification {
-    margin: 0 auto;
-    text-align: center;
+    max-width: 390px;
+    width: fit-content;
   }
 
 }
