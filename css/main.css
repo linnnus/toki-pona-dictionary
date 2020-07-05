@@ -104,10 +104,7 @@ select:-webkit-autofill:focus {
 body::-webkit-scrollbar {
   display:none;
 }
-
-@media screen and (min-width: 850px) {
-
-  /* in here goes all the centering and stuff for big screens  */
+@media only screen and (min-width: 992px) {
 
   body {
     background-color: #32a852
