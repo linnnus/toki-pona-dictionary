@@ -10,14 +10,18 @@ body {
 
 .title {
   width: fit-content;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
 }
-
 
 /* add a bit of spacing */
 .content > * {
   margin: 60px auto 0 auto;
+}
+
+/****************************** DEFINITIONS ***********************************/
+.entry > .word {
+  font-weight: bold;
 }
 
 .examples > p {
@@ -30,10 +34,12 @@ body {
   margin-right: 1em;
 }
 
-/* remove list styling on all sublists */
+/* remove list styling all lists  */
 ul {
   list-style-type: none;
 }
+
+/* remove indents on all  */
 li.entry ul {
   padding: 0;
 }
@@ -43,6 +49,7 @@ li.entry ul {
   margin-right: .5em;
 }
 
+/*************************************** SEARCH ************************/
 .search {
   width: max-content;
   background-color: white;
@@ -104,7 +111,9 @@ select:-webkit-autofill:focus {
 body::-webkit-scrollbar {
   display:none;
 }
-@media only screen and (min-width: 992px) {
+
+/*************************** DESKTOP VIEW *************************************/
+@media only screen and (min-width: 700px) {
 
   body {
     background-color: #32a852
@@ -132,6 +141,10 @@ body::-webkit-scrollbar {
   .stuff-container {
     align-self: flex-end;
     width: 400px;
+  }
+
+  .title {
+    font-size: 3em;
   }
 
 }
