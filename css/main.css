@@ -26,9 +26,8 @@ div.info {
 
 li.res-notification {
   margin: 0 auto;
-  font-weight: bold; 
+  font-weight: bold;
   text-align: center;
-  margin-left: -40px; /* counter the padding on ul.list*/
 }
 
 /****************************** DEFINITIONS ***********************************/
