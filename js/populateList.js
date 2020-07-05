@@ -18,10 +18,7 @@ function populateList(definitions) {
     let word = document.createElement('P');
     word.textContent = entry['word'];
     if (entry['alternatives']) { // add alternatives
-      entry['alternatives'].forEach( (item, i) => {
-        // else they wont be sepated by spaces
-        word.textContent += `, ${entry['alternatives'][i].toString()}`;
-      });
+      word.textContent += ', ' + entry['alternatives'].join(', ');
     }
     word.classList.add('word');
     li.insertAdjacentElement('beforeend', word);

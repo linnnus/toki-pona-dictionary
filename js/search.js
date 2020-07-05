@@ -27,7 +27,7 @@ function search(term, includeTypes){
     if(entry.translations){
 
       for ( let key in entry.translations){
-        match = entry.translations[key].match(reg) ? true : match;
+        match = reg.test(entry.translations[key]) ? true : match;
       }
 
       if (match) {
@@ -44,8 +44,10 @@ function search(term, includeTypes){
 
       entry.definitions.forEach( def => {
 
-        match = def.type.match(reg) ? true : match;
-        match = def.definition.match(reg) ? true : match;
+        // match = def.type.match(reg) ? true : match;
+        // match = def.definition.match(reg) ? true : match;
+        match = reg.test(def.type) ? true : match;
+        match = reg.test(def.definition) ? true : match;
 
       });
 
