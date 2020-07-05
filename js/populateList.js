@@ -1,3 +1,12 @@
+// for easy checking
+Object.prototype.isEmpty = function() {
+  for(var key in this) {
+    if(this.hasOwnProperty(key))
+    return false;
+  }
+  return true;
+}
+
 function populateList(definitions) {
 
   let list = document.getElementById('list');
@@ -5,6 +14,18 @@ function populateList(definitions) {
   // clear all child nodes
   while (list.firstChild) {
     list.removeChild(list.firstChild);
+  }
+
+  // if definitions empty
+  if(definitions.isEmpty()){
+    console.log('no definitions to populate');
+
+    let li = document.createElement('LI');
+    li.classList.add('res-notification');
+    li.textContent = 'No results!'
+    list.insertAdjacentElement('beforeend', li);
+
+    return;
   }
 
   // loop over every word
@@ -78,11 +99,21 @@ function populateList(definitions) {
 
     } // if examples
 
+    if (entry['notes']) {
+
+      let span = document.createElement('SPAN');
+      span.classList.add('notes');
+      span.textContent = '* ' + entry['notes'].join('\r\n* ');
+
+      div.insertAdjacentElement('beforeend', span);
+    }
+
     // add div containing examples and definitions to li
     li.insertAdjacentElement('beforeend', div);
 
     // add everything to html
     list.insertAdjacentElement('beforeend', li);
+
 
   }); // entries
 

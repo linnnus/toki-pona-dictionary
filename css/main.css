@@ -19,6 +19,10 @@ body {
   margin: 60px auto 0 auto;
 }
 
+div.info {
+  width: 285px;
+}
+
 /****************************** DEFINITIONS ***********************************/
 .entry > .word {
   font-weight: bold;
@@ -49,6 +53,11 @@ li.entry ul {
   margin-right: .5em;
 }
 
+/* preserve whitespace while breaking line */
+span.notes {
+  white-space: pre-line;
+}
+
 /*************************************** SEARCH ************************/
 .search {
   width: max-content;
@@ -60,7 +69,7 @@ li.entry ul {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  border-bottom: 2px solid lightgrey;
+  border-bottom: 3px solid lightgrey;
 }
 
 .search > .text {
@@ -119,15 +128,16 @@ body::-webkit-scrollbar {
     background-color: #32a852
   }
 
-  .examples > p {
-    background-color: #26803e;
-    border-color: #26803e;
+  /* remove side-padding on main list */
+  ul.list {
+    padding: 0;
   }
 
   .entry {
     display: flex;
     width: fit-content;
-    margin: 0 auto;
+    height: fit-content;
+    margin: 0 auto 12px auto;
   }
 
   .word {
@@ -140,11 +150,25 @@ body::-webkit-scrollbar {
 
   .stuff-container {
     align-self: flex-end;
-    width: 400px;
+    width: 300px;
+  }
+
+  .examples > p {
+    background-color: #26803e;
+    border-color: #26803e;
   }
 
   .title {
     font-size: 3em;
+  }
+
+  div.info, li.res-notification {
+    width: 390px;
+  }
+
+  li.res-notification {
+    margin: 0 auto;
+    text-align: center;
   }
 
 }
