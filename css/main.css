@@ -171,7 +171,6 @@ body::-webkit-scrollbar {
 
   div.info, li.res-notification {
     max-width: 390px;
-    width: fit-content;
   }
 
 }

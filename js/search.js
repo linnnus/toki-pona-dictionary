@@ -6,7 +6,8 @@ function search(term, includeTypes){
   dict.forEach(entry => {
 
     let match = false;
-    let reg = new RegExp(String.raw`\b${term}\b`); // NOT UNICODE AWARE -> doesnt work with russian
+    let reg = new RegExp(String.raw`(?<=\s|^|\p{P})${term}(?=\s|\p{P}|$)`, 'iu');
+
 
     // switch?
 
