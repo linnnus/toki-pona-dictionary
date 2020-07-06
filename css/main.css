@@ -12,6 +12,11 @@ body {
   width: fit-content;
   font-size: 2em;
   text-align: center;
+  padding: 10px;
+}
+
+.title:active {
+  background-color: #912c2c;
 }
 
 /* add a bit of spacing */
@@ -67,7 +72,7 @@ span.notes {
 
 /*************************************** SEARCH ************************/
 .search {
-  width: max-content;
+  width: fit-content;
   background-color: white;
 
   border: 0;
