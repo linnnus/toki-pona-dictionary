@@ -1336,7 +1336,7 @@ let dict_json = `[
   "definitions":[
     {
       "type":"n",
-      "definition":"hand, arm"
+      "definition":"hand, arm, tactile organ"
     },
     {
       "type":"mod",
