@@ -84,13 +84,13 @@ function populateList(definitions) {
     // loop over examples examples
     if (entry['exampleUses']){
 
-      let examples = document.createElement('DIV');
+      let examples = document.createElement('LI');
       examples.classList.add('examples');
 
-      entry['exampleUses'].forEach( example => {
+      entry['exampleUses'].slice(0,3).forEach( example => {
 
-        let p = document.createElement('P');
-        p.textContent = '"' + example + '"';
+        let p = document.createElement('LI');
+        p.textContent = `"${example}"`;
         examples.insertAdjacentElement('beforeend', p);
 
       }); // examples foreach
