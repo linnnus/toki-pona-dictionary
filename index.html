@@ -11,7 +11,7 @@
   <div class="content">
     <h1 class="title" id="title">Toki Pona dictionary</h1>
 
-    <form class="search" id="form">
+    <form class="search shadow" id="form">
       <input type="text" id="text" class="text">
       <button type="submit" class="submit" id="submit">
         <svg viewbox="0 0 24 24" class="svg" id="svg">
@@ -42,6 +42,13 @@
         </div>
 
       </div>
+
+			<div class="fab shadow" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+					<svg class="fab-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+					</svg>
+			</div>
 
       <!-- scripts to be loaded after DOM -->
       <script src="data/dictionary.js" charset="utf-8"></script>

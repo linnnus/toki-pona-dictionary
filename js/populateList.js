@@ -36,7 +36,7 @@ function populateList(definitions) {
     li.classList.add('entry');
 
     // create word
-    let word = document.createElement('P');
+    let word = document.createElement('H2');
     word.textContent = entry['word'];
     if (entry['alternatives']) { // add alternatives
       word.textContent += ', ' + entry['alternatives'].join(', ');
