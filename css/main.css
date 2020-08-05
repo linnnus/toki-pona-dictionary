@@ -1,9 +1,9 @@
 html {
   font: 14px Helvetica, "Lucida Grande", Arial, sans-serif;
 
-	--main-color: #fffff;
+	--main-color: white;
 	--accent-color: #dedede;
-	--text-color: #00000;
+	--text-color: black;
 
 }
 
