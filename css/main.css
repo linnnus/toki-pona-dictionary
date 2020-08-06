@@ -47,9 +47,13 @@ div.fab {
 
 	width: 56px;
 	height: 56px;
-	background-color: var(--main-color);
-	display: flex; /*somehow this makes the svg align prperly */
+
+	border: 3px solid var(--accent-color);
 	border-radius: 100%;
+
+	background-color: var(--main-color);
+	display: flex; /*somehow this makes the svg center-align properly*/
+
 }
 
 svg.fab-svg {
@@ -69,7 +73,7 @@ svg.fab-svg {
 /*************************************** SEARCH ************************/
 .search {
 	width: 83%;
-	border: 2px solid var(--accent-color);
+	border: 3px solid var(--accent-color);
 	padding: 0;
 	display: flex;
 	flex-direction: row;
@@ -241,7 +245,6 @@ body {
   }
 
 	div.fab {
-		position: fixed;
 		right: 32px;
 		bottom: 32px;
 	}
