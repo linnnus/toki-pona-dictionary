@@ -4,6 +4,7 @@ console.log(avaiable);
 
 if (avaiable) {
 
+	// theres no need to make a change on white since thats the defualt
 	switch (localStorage.getItem('theme')) {
 		case 'dark':
 			setDarkTheme();
@@ -12,6 +13,7 @@ if (avaiable) {
 			setRedTheme();
 			break;
 	}
+
 }
 
 // change theme
@@ -31,6 +33,10 @@ function setLightTheme(){
 	document.documentElement.style
 		.setProperty('--book-color', '#34A3D3');
 
+	if (avaiable) {
+		localStorage.setItem('theme', 'light');
+	}
+
 }
 
 function setDarkTheme(){
@@ -42,6 +48,10 @@ function setDarkTheme(){
 		.setProperty('--text-color', 'white');
 	document.documentElement.style
 		.setProperty('--book-color', '#34A3D3');
+
+	if (avaiable) {
+		localStorage.setItem('theme', 'dark');
+	}
 }
 
 function setRedTheme(){
@@ -53,6 +63,11 @@ function setRedTheme(){
 		.setProperty('--text-color', 'white');
 	document.documentElement.style
 		.setProperty('--book-color', '#7da0af');
+
+	if (avaiable) {
+		localStorage.setItem('theme', 'red');
+	}
+
 }
 
 function storageAvailable(type) {
