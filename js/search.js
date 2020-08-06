@@ -1,5 +1,5 @@
 function search(term, includeTypes){
-  console.log('searching for "' + term + '"');
+  // console.log('searching for "' + term + '"');
 
   let res = [];
 
@@ -17,7 +17,7 @@ function search(term, includeTypes){
       entry.alternatives.forEach(str => match = reg.test(str) ? true : match );
 
       if (match) {
-        console.log(entry.word, 'matched in alternatives');
+        // console.log(entry.word, 'matched in alternatives');
         res.push(entry);
         return; // no need to search further
       }
@@ -32,7 +32,7 @@ function search(term, includeTypes){
       }
 
       if (match) {
-        console.log(entry.word, 'matched in translations');
+        // console.log(entry.word, 'matched in translations');
         res.push(entry);
         return; // no need to search further
       }
@@ -53,7 +53,7 @@ function search(term, includeTypes){
       });
 
       if (match) {
-        console.log(entry.word, 'matched in definitions');
+        // console.log(entry.word, 'matched in definitions');
         res.push(entry);
         return; // no need to search further
       }
@@ -62,7 +62,7 @@ function search(term, includeTypes){
 
   });
 
-  console.log('search returned:', res);
+  // console.log('search returned:', res);
   populateList(res);
 
 }

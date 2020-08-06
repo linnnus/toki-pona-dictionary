@@ -15,7 +15,7 @@ title.onclick = () => { // on mobile it feels natural, that this would reset
 
   text.value = '';
   search('');
-  document.activeElement.blur(); // (hopful´ly) hide softkeyboard
+  document.activeElement.blur(); // (hopfully) hide softkeyboard
 
 }
 

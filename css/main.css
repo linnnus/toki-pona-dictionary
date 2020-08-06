@@ -13,15 +13,13 @@ body {
 	color: var(--text-color);
 }
 
-.title {
-  width: fit-content;
-  font-size: 2em;
-  text-align: center;
-  padding: 10px;
+.title-container {
+	width: 150px;
+	width: fit-content;
 }
 
-.title:active {
-  background-color: var(--accent-color);
+.title-container:active{
+	filter: brightness(50);
 }
 
 /* add a bit of spacing */
@@ -120,37 +118,40 @@ span.notes {
 
 /*************************************** SEARCH ************************/
 .search {
-  width: fit-content;
-  /* background-color: var(--main-color); */
+	width: 83%;
+	/* background-color: var(--main-color); */
+	border: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	height: 35px;
 
-  border: 0;
-  padding: 0;
-
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
 }
 
 .search > .text {
-  padding-left: 1em;
-  border-style: none;
-
-  height: 35px;
-  width: 250px;
+	padding: 0 0 0 1em;
+	border-style: none;
+	height: 35px;
+	width: 87%;
+	/* display: inline-block;*/
 }
 
 .search .submit {
-  background-color: var(--main-color);
-  border: none;
-  padding: 0;
+	background-color: var(--main-color);
+	border: none;
+	padding: 0;
+	/* display: inline-block; */
+	width: 13%;
+	height: 100%;
 }
 
 .search .svg {
-  outline: none;
-  fill: dimgrey;
-  width: 25px;
-  padding: 5px;
-  height: auto;
+	outline: none;
+	fill: dimgrey;
+	width: 25px;
+	padding: inherit;
+	height: auto;
 }
 
 /* remove outline on focus */
@@ -184,17 +185,18 @@ body::-webkit-scrollbar {
 @media only screen and (min-width: 700px) {
 
   /* remove side-padding on main list */
-  ul.list {
+
+	form.search {
+		width: 300px;
+	}
+
+	ul.list {
     padding: 0;
   }
 
   .entry {
     width: 400px;
     margin: 0 auto 12px auto;
-  }
-
-  .title {
-    font-size: 3em;
   }
 
   div.info, li.res-notification {
