@@ -18,101 +18,106 @@ function populateList(definitions) {
 
   // if definitions empty
   if(definitions.isEmpty()){
-    console.log('no definitions to populate');
+    // console.log('no definitions to populate');
 
-    let li = document.createElement('LI');
-    li.classList.add('res-notification');
-    li.textContent = 'No results!'
-    list.insertAdjacentElement('beforeend', li);
+    let noti = document.createElement('DIV');
+    noti.classList.add('res-notification');
+    noti.textContent = 'No results!'
+    list.insertAdjacentElement('beforeend', noti);
 
     return;
+
   }
 
   // loop over every word
-  definitions.forEach( entry => {
+  definitions.forEach( entryData => {
 
     // create li
-    let li = document.createElement('LI');
-    li.classList.add('entry');
+    let entryContainer = document.createElement('DIV');
+    entryContainer.classList.add('entry');
 
-    // create word
-    let word = document.createElement('H2');
-    word.textContent = entry['word'];
-    if (entry['alternatives']) { // add alternatives
-      word.textContent += ', ' + entry['alternatives'].join(', ');
-    }
-    word.classList.add('word');
-    li.insertAdjacentElement('beforeend', word);
+	    // create word
+	    let word = document.createElement('H2');
+	    word.textContent = entryData['word'];
+	    if (entryData['alternatives']) { // add alternatives
+	      word.textContent += ', ' + entryData['alternatives'].join(', ');
+	    }
+	    word.classList.add('word');
+	    entryContainer.insertAdjacentElement('beforeend', word);
 
-    // create container for definitions, examples (and translations)
-    let div = document.createElement('DIV');
-    div.classList.add('stuff-container');
+			// loop over definitions for that word
+			if (entryData['definitions']) {
 
-    // loop over definitions for that word
-    if (entry['definitions']) {
+				// create list for definitions
+				let definitions = document.createElement('UL');
+				definitions.classList.add('definition-list');
 
-      // create list for definitions
-      let definitions = document.createElement('UL');
-      definitions.classList.add('definition-list');
+				entryData['definitions'].forEach( def => {
 
-      entry['definitions'].forEach( def => {
+					let definitionContainer = document.createElement('LI');
+					definitionContainer.classList.add('definition-container');
 
-        let definitionContainer = document.createElement('UL');
-        definitionContainer.classList.add('definition-container');
+					// create type
+					let type = document.createElement('SPAN');
+					type.textContent = def['type'];
+					type.classList.add('type');
+					definitionContainer.insertAdjacentElement('beforeend', type);
 
-        // create type
-        let type = document.createElement('SPAN');
-        type.textContent = def['type'];
-        type.classList.add('type');
-        definitionContainer.insertAdjacentElement('beforeend', type);
+					// create definition
+					let definition = document.createElement('SPAN');
+					definition.textContent = def['definition'];
+					definition.classList.add('definition');
+					definitionContainer.insertAdjacentElement('beforeend', definition);
 
-        // create definition
-        let definition = document.createElement('SPAN');
-        definition.textContent = def['definition'];
-        definition.classList.add('definition');
-        definitionContainer.insertAdjacentElement('beforeend', definition);
+					definitions.insertAdjacentElement('beforeend', definitionContainer);
 
-        definitions.insertAdjacentElement('beforeend', definitionContainer);
+				});
 
-      });
+				// add list of definitions to li
+				entryContainer.insertAdjacentElement('beforeend', definitions);
 
-      // add list of definitions to li
-      div.insertAdjacentElement('beforeend', definitions);
+			}
 
-    }
+			// loop over examples examples
+			if (entryData['exampleUses']){
 
-    // loop over examples examples
-    if (entry['exampleUses']){
+				let examples = document.createElement('UL');
+				examples.classList.add('examples');
 
-      let examples = document.createElement('LI');
-      examples.classList.add('examples');
+				entryData['exampleUses'].slice(0,3).forEach( example => {
 
-      entry['exampleUses'].slice(0,3).forEach( example => {
+					let p = document.createElement('LI');
+					p.textContent = `"${example}"`;
+					examples.insertAdjacentElement('beforeend', p);
 
-        let p = document.createElement('LI');
-        p.textContent = `"${example}"`;
-        examples.insertAdjacentElement('beforeend', p);
+				}); // examples foreach
 
-      }); // examples foreach
+				entryContainer.insertAdjacentElement('beforeend', examples);
 
-      div.insertAdjacentElement('beforeend', examples);
+			} // if examples
 
-    } // if examples
+			if (entryData['notes']) {
 
-    if (entry['notes']) {
+				let noteList = document.createElement('UL');
+				noteList.classList.add('note-list');
+				// noteList.textContent = '* ' + entryData['notes'].join('\r\n* ');
 
-      let span = document.createElement('SPAN');
-      span.classList.add('notes');
-      span.textContent = '* ' + entry['notes'].join('\r\n* ');
+				entryData['notes'].forEach( noteData => {
 
-      div.insertAdjacentElement('beforeend', span);
-    }
+					let note = document.createElement('LI');
+					note.classList.add('note');
+					note.textContent = `* ${noteData}`;
 
-    // add div containing examples and definitions to li
-    li.insertAdjacentElement('beforeend', div);
+					noteList.insertAdjacentElement('beforeend', note)
 
+				});
+
+				entryContainer.insertAdjacentElement('beforeend', noteList);
+
+			}
+			
     // add everything to html
-    list.insertAdjacentElement('beforeend', li);
+    list.insertAdjacentElement('beforeend', entryContainer);
 
 
   }); // entries

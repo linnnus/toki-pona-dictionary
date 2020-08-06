@@ -4,13 +4,15 @@ html {
 	--main-color: white;
 	--accent-color: #dedede;
 	--text-color: black;
+	--book-color: #34A3D3;
+
+	background-color: var(--main-color);
+	color: var(--text-color);
 
 }
 
-body {
-  margin: 0;
-  background-color: var(--main-color);
-	color: var(--text-color);
+* {
+	box-sizing: border-box;
 }
 
 .title-container {
@@ -18,25 +20,24 @@ body {
 	width: fit-content;
 }
 
-.title-container:active{
-	filter: brightness(50);
-}
-
 /* add a bit of spacing */
-.content > * {
+.center {
   margin: 60px auto 0 auto;
 }
 
-div.info {
-  max-width: 285px;
-  width: fit-content;
-}
 
-li.res-notification {
+.res-notification {
   margin: 0 auto;
   font-weight: bold;
   text-align: center;
 }
+
+/* hide scrollbar while retaining functionality*/
+body::-webkit-scrollbar {
+  display:none;
+}
+
+/**************************************** SVG ********************************/
 
 div.fab {
 	position: fixed;
@@ -56,66 +57,15 @@ svg.fab-svg {
 	fill: var(--text-color);
 }
 
+.front {
+	fill: var(--book-color);
+}
+
 .shadow {
 	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	-moz-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
-
-/******************************* ENTRIES **************************************/
-
-.entry {
-	width: 90%;
-	margin: auto;
-}
-
-.entry > .word {
-  font-weight: bold;
-	width: 90px;
-	text-align: left;
-	display: block;
-	width: 100%;
-	padding-bottom: 1em;
-	border-bottom: 2px solid var(--accent-color);
-}
-
-ul.definition-list {
-  margin-bottom: 1em;
-}
-
-.examples > li {
-  background-color: var(--accent-color);
-  padding: 5px;
-  border-style: solid;
-  border-color: var(--accent-color);
-  width: fit-content;
-  display: inline-block;
-  margin-right: 1em; /* i have no idea why this is here, but im scared of removing it */
-	margin-bottom: 1em;
-	border-radius: 3px;
-}
-
-/* remove list styling all lists  */
-ul {
-  list-style-type: none;
-	padding: 0;
-}
-
-/* remove indents on all  */
-li.entry ul {
-  padding: 0;
-}
-
-.list span.type {
-  font-style: oblique;
-  margin-right: .5em;
-}
-
-/* preserve whitespace while breaking line */
-span.notes {
-  white-space: pre-line;
-}
-
 /*************************************** SEARCH ************************/
 .search {
 	width: 83%;
@@ -134,11 +84,13 @@ span.notes {
 	border-style: none;
 	height: 35px;
 	width: 87%;
+	background-color: white;
+	color: black;
 	/* display: inline-block;*/
 }
 
 .search .submit {
-	background-color: var(--main-color);
+	background-color: white !important;
 	border: none;
 	padding: 0;
 	/* display: inline-block; */
@@ -163,7 +115,6 @@ span.notes {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
@@ -176,9 +127,82 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: black;
 }
 
-/* hide scrollbar while retaining functionality*/
-body::-webkit-scrollbar {
-  display:none;
+/******************************* ENTRIES **************************************/
+
+.definition-list {
+	margin-bottom: 1em;
+}
+
+.entry {
+	width: 90%;
+	margin: auto;
+}
+
+.entry > .word {
+  font-weight: bold;
+	width: 90px;
+	text-align: left;
+	display: block;
+	width: 100%;
+	padding-bottom: 1em;
+	border-bottom: 2px solid var(--accent-color);
+}
+
+.examples > li {
+  background-color: var(--accent-color);
+  padding: 5px;
+  border-style: solid;
+  border-color: var(--accent-color);
+  width: fit-content;
+  display: inline-block;
+  margin-right: 1em; /* i have no idea why this is here, but im scared of removing it */
+	margin-bottom: 1em;
+	border-radius: 3px;
+}
+
+/* remove list styling all lists  */
+ul {
+  list-style-type: none;
+	padding: 0;
+}
+
+.list span.type {
+  font-style: oblique;
+  margin-right: .5em;
+}
+
+.note-list{
+
+}
+
+.note {
+
+}
+
+/***************************** FOOTER ****************************************/
+
+footer {
+	background-color: var(--accent-color);
+	color: var(--text-color);
+
+	padding: 2em;
+	width: 100%;
+}
+
+footer p {
+	margin: 0;
+}
+
+/* keep footer at bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+	margin: 0;
+}
+
+.content {
+  flex: 1;
 }
 
 /*************************** DESKTOP VIEW *************************************/
@@ -186,7 +210,7 @@ body::-webkit-scrollbar {
 
   /* remove side-padding on main list */
 
-	form.search {
+	form.search, li.res-notification {
 		width: 300px;
 	}
 
@@ -199,13 +223,16 @@ body::-webkit-scrollbar {
     margin: 0 auto 12px auto;
   }
 
-  div.info, li.res-notification {
-    max-width: 390px;
-  }
-
 	div.fab {
 		position: fixed;
 		right: 32px;
 		bottom: 32px;
 	}
+
+	.footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
 }
