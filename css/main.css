@@ -75,14 +75,14 @@ svg.fab-svg {
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
-	height: 35px;
+	height: 45px;
 
 }
 
 .search > .text {
 	padding: 0 0 0 1em;
 	border-style: none;
-	height: 35px;
+	height: 45px;
 	width: 87%;
 	background-color: white;
 	color: black;
