@@ -61,6 +61,7 @@ svg.fab-svg {
 	fill: var(--text-color);
 }
 
+/* color the front page */
 .front {
 	fill: var(--book-color);
 }
