@@ -11,7 +11,7 @@
 			"sizes":"512x512","type":"image/png"
 		}
 	],
-	"start_url": "/toki-pona-dictionary",
+	"start_url": "https://pleasedontlookitsawfull.github.io/toki-pona-dictionary/",
 	"theme_color":"#ffffff",
 	"background_color":"#ffffff",
 	"display":"standalone"
