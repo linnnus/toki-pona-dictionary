@@ -15,16 +15,13 @@ function search(term, includeTypes){
 		if ( entry.word && reg.test(entry.word) ) {
 			res.push(entry);
 		} else if (	entry.alternatives
-			&& entry.alternatives.some(str => match = reg.test(str)) ) {
+			&& entry.alternatives.some(str => reg.test(str)) ) {
 			res.push(entry);
-		} else if ( entry.alternatives
-			&& entry.alternatives.some(str => match = reg.test(str)) ) {
-			res.push(entry);
-		} else if ( entry.definitions 
-			&& entry.definitions.some(str => match = reg.test(str)) ){
+		} else if ( entry.definitions
+			&& entry.definitions.some(def => reg.test(def.definition)) ){
 			res.push(entry);
 		} else if ( entry.translations
-			&& Object.values(entry.translations).some(str => match = reg.test(str)) ){
+			&& Object.values(entry.translations).some(str => reg.test(str)) ){
 			res.push(entry);
 		}
 
