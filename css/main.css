@@ -15,11 +15,6 @@ html {
 	box-sizing: border-box;
 }
 
-.title-container {
-	width: 150px;
-	width: fit-content;
-}
-
 /* add a bit of spacing */
 .center {
   margin: 60px auto 0 auto;
@@ -37,7 +32,7 @@ body::-webkit-scrollbar {
   display:none;
 }
 
-/**************************************** SVG ********************************/
+/**************************************** FAB ********************************/
 
 div.fab {
 	position: fixed;
@@ -54,6 +49,8 @@ div.fab {
 	background-color: var(--main-color);
 	display: flex; /*somehow this makes the svg center-align properly*/
 
+	cursor: pointer;
+
 }
 
 svg.fab-svg {
@@ -61,16 +58,25 @@ svg.fab-svg {
 	fill: var(--text-color);
 }
 
-/* color the front page */
-.front {
-	fill: var(--book-color);
-}
-
 .shadow {
 	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	-moz-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
+
+/*************************************** BOOK *********************************/
+
+.title-container {
+	width: 150px;
+	width: fit-content;
+	cursor: pointer;
+}
+
+/* color the front page */
+.front {
+	fill: var(--book-color);
+}
+
 /*************************************** SEARCH ************************/
 .search {
 	width: 83%;
@@ -98,6 +104,8 @@ svg.fab-svg {
 	padding: 0;
 	width: 13%;
 	height: 100%;
+
+	cursor: pointer;
 }
 
 .search .svg {
@@ -228,6 +236,7 @@ body {
 
 
 /*************************** DESKTOP VIEW *************************************/
+
 @media only screen and (min-width: 700px) {
 
   /* remove side-padding on main list */
