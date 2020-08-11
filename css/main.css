@@ -77,7 +77,7 @@ svg.fab-svg {
 	fill: var(--book-color);
 }
 
-/*************************************** SEARCH ************************/
+/*************************************** SEARCH *******************************/
 .search {
 	width: 83%;
 	border: 3px solid var(--accent-color);
@@ -168,6 +168,15 @@ select:-webkit-autofill:focus {
   margin-right: 1em; /* i have no idea why this is here, but im scared of removing it */
 	margin-bottom: 1em;
 	border-radius: 3px;
+}
+
+/* qoutes around examples */
+.examples > li::before {
+	content: "\"";
+}
+
+.examples > li::after {
+	content: "\"";
 }
 
 /* remove list styling all lists  */

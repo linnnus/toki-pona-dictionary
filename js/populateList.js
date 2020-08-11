@@ -87,7 +87,7 @@ function populateList(definitions) {
 				entryData['exampleUses'].slice(0,3).forEach( example => {
 
 					let p = document.createElement('LI');
-					p.textContent = `"${example}"`;
+					p.textContent = example;
 					examples.insertAdjacentElement('beforeend', p);
 
 				}); // examples foreach
@@ -115,7 +115,7 @@ function populateList(definitions) {
 				entryContainer.insertAdjacentElement('beforeend', noteList);
 
 			}
-			
+
     // add everything to html
     list.insertAdjacentElement('beforeend', entryContainer);
 
