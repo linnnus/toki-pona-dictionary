@@ -8,6 +8,4 @@ quick dictionary i made for me to use while learning toki pona
 	* definitions are kinda meg
 	* some examples are waaaaay too long
 	* some definitions are missing examples  
-* add offline capabilities using sw
-* add tamplate definitions
-* use ::before and ::after for examples 
+* add tamplate definitions, to comply with material design
