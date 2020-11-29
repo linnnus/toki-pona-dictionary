@@ -40,23 +40,26 @@ const entries = dictionary.map((entry) => {
 	}
 });
 
+import { escapeReg, findMatch } from './utils.mjs';
 const searchForm = document.getElementById('form');
 const searchText = document.getElementById('text');
 searchForm.onsubmit = (e) => {
 	e.preventDefault();
 	document.activeElement.blur(); // (hopfully) hide softkeyboard
 
-	const reg = new RegExp(String.raw`\b${searchText.value}\b`, 'iu');
+	const reg = new RegExp(`\\b${escapeReg(searchText.value)}\\b`, 'iu');
 	for (const entry of entries) {
-		if (!entry.word.match(reg)) {
+		if (!findMatch(reg, entry)) {
 			entry.elt.classList.add('hide');
 		} else {
 			entry.elt.classList.remove('hide');
 		}
 	}
 };
+
 const book = document.getElementById('book');
 book.onclick = (e) => {
+	// show all
 	for (const entry of entries) {
 		entry.elt.classList.remove('hide');
 	}
