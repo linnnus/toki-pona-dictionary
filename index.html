@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 	<title>lipu nimi pi toki pona</title>
-	<link rel="stylesheet" href="css/main.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	<link rel="manifest" href="manifest.json">
-
+	<link rel="manifest" href="manifest.json" />
 	<!-- favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
 </head>
 <body>
-
-	<div class="content center">
-
+	<main class="content center">
 		<div class="loader center" id="loader">
 			<div class="loader-spinner"></div>
 			<p class="loader-text center">Loading app...</p>
 		</div>
-
 		<div class="book center" id="book">
-			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 140 190" width="140pt" height="190pt">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation: isolate;" viewBox="0 0 140 190" width="140pt" height="190pt">
 				<g>
-					<rect class="book-front" x="25" y="0" width="115" height="190" transform="matrix(1,0,0,1,0,0)" fill="rgb(52,163,211)"/>
-					<path d="M 20 0 L 31 0 L 31 190 L 20 190 C 8.962 190 0 181.038 0 170 L 0 20 C 0 8.962 8.962 0 20 0 Z" style="stroke:none;fill:#464646;stroke-miterlimit:10;"/>
-					<path d="M 19.483 158.764 L 140 158.764 L 140 180.021 L 19.483 180.021 C 13.697 180.021 9 175.324 9 169.538 L 9 169.248 C 9 163.462 13.697 158.764 19.483 158.764 Z" style="stroke:none;fill:#F8D3A3;stroke-miterlimit:10;"/>
+					<rect class="book-front" x="25" y="0" width="115" height="190" transform="matrix(1,0,0,1,0,0)" fill="rgb(52,163,211)" />
+					<path d="M 20 0 L 31 0 L 31 190 L 20 190 C 8.962 190 0 181.038 0 170 L 0 20 C 0 8.962 8.962 0 20 0 Z" style="stroke: none; fill: #464646; stroke-miterlimit: 10;" />
+					<path
+					d="M 19.483 158.764 L 140 158.764 L 140 180.021 L 19.483 180.021 C 13.697 180.021 9 175.324 9 169.538 L 9 169.248 C 9 163.462 13.697 158.764 19.483 158.764 Z"
+					style="stroke: none; fill: #f8d3a3; stroke-miterlimit: 10;"
+					/>
 					<g>
 						<g>
-							<ellipse vector-effect="non-scaling-stroke" cx="82.48571428571404" cy="60.91469816272945" rx="24.074999999999903" ry="24.011811023621927" fill="rgb(242,242,100)"/>
-							<path d=" M 95.096 60.915 C 95.096 67.856 89.446 73.492 82.486 73.492 C 75.526 73.492 69.875 67.856 69.875 60.915 L 82.486 60.915 L 95.096 60.915 Z " fill="rgb(34,34,156)"/>
+							<ellipse vector-effect="non-scaling-stroke" cx="82.48571428571404" cy="60.91469816272945" rx="24.074999999999903" ry="24.011811023621927" fill="rgb(242,242,100)" />
+							<path d=" M 95.096 60.915 C 95.096 67.856 89.446 73.492 82.486 73.492 C 75.526 73.492 69.875 67.856 69.875 60.915 L 82.486 60.915 L 95.096 60.915 Z " fill="rgb(34,34,156)" />
 						</g>
 						<g>
-							<rect x="56.5" y="92.311" width="53.5" height="10.672" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,0)" fill-opacity="0.19"/>
-							<rect x="64.907" y="107.938" width="36.686" height="10.672" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,0)" fill-opacity="0.19"/>
+							<rect x="56.5" y="92.311" width="53.5" height="10.672" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,0)" fill-opacity="0.19" />
+							<rect x="64.907" y="107.938" width="36.686" height="10.672" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,0)" fill-opacity="0.19" />
 						</g>
 					</g>
 				</g>
 			</svg>
 		</div>
-
 		<form class="search center" id="form">
-			<input type="text" id="text" class="search-text">
+			<input type="text" id="text" class="search-text" />
 			<button type="submit" class="submit" id="submit">
 				<svg viewbox="0 0 24 24" class="svg" id="svg">
-					<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-						<path d="M0 0h24v24H0z" fill="none">
-						</svg>
-					</button>
-				</form>
-
-				<div class="entries" id="entries"></div>
-
-			</div>
-
-			<div class="fab" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-				<svg class="fab-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-					<path d="M0 0h24v24H0z" fill="none"/>
-					<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+					<path
+					d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+					/>
+					<path d="M0 0h24v24H0z" fill="none" />
 				</svg>
-			</div>
-
-			<!-- scripts to be loaded after DOM -->
-			<script src="data/dictionary.mjs" charset="utf-8" type="module"></script>
-			<script src="js/utils.mjs" charset="utf-8" type="module"></script>
-			<script src="js/app.mjs" charset="utf-8" type="module"></script>
-		</body>
-		</html>
+			</button>
+		</form>
+		<div class="entries" id="entries"></div>
+		<footer class="footer">
+			<a href="https://en.wikipedia.org/wiki/Toki_Pona">Toki Pona</a> was created by Sonja Lang in 2001.<br/>
+			<br/>
+			The entries in this dictionary come from<a href="#"> here</a>.<br/>
+			<br/>
+			Visit the <a href="https://pleasedontlookitsawfull.github.io/toki-pona-dictionary/">Github repository</a> for this dictionary. Be warned though: it's pretty disgusting.
+		</footer>
+	</main>
+	<div class="fab" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+		<svg class="fab-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+			<path d="M0 0h24v24H0z" fill="none" />
+			<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+		</svg>
+	</div>
+	<!-- scripts to be loaded after DOM -->
+	<script src="data/dictionary.mjs" charset="utf-8" type="module"></script>
+	<script src="js/utils.mjs" charset="utf-8" type="module"></script>
+	<script src="js/app.mjs" charset="utf-8" type="module"></script>
+</body>
+</html>

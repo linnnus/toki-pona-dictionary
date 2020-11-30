@@ -21,10 +21,17 @@ body::-webkit-scrollbar {
 	width: 100%;
 	max-width: 350px;
 	padding: 0 1em 0 1em;
+	flex: 1;
 }
 
 .content > * {
-	margin-bottom: 20px;
+	margin-bottom: 2em;
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #34a3d3;
 }
 
 /***************************** UTILS ************************************/
@@ -206,12 +213,9 @@ select:-webkit-autofill:focus {
 
 /***************************** FOOTER ****************************************/
 
-footer {
-	background-color: var(--accent-color);
-	color: var(--text-color);
-
-	padding: 2em;
-	width: 100%;
+.footer {
+	padding-top: 1em;
+	border-top: var(--accent-color) 2px solid;
 }
 
 footer > p.footer-content {
