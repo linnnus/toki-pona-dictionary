@@ -29,7 +29,7 @@ const book = document.getElementById('book');
 book.onclick = (e) => {
 	// show all
 	for (const entry of entries) {
-		entry.elt.classList.remove('hide');
+		entry.elt.style.display = 'block';
 	}
 };
 
