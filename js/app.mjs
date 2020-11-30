@@ -9,18 +9,13 @@ const entries = dictionary.map((entry) => {
 });
 
 import { escapeReg, findMatch } from './utils.mjs';
-const searchForm = document.getElementById('form');
 const searchText = document.getElementById('text');
-searchForm.onsubmit = (e) => {
-	e.preventDefault();
-	document.activeElement.blur(); // (hopfully) hide softkeyboard
-
-	const reg = new RegExp(`\\b${escapeReg(searchText.value)}\\b`, 'iu');
+searchText.oninput = (e) => {
 	for (const entry of entries) {
-		if (!findMatch(reg, entry)) {
-			entry.elt.style.display = 'none';
-		} else {
+		if (entry.word.includes(e.target.value)) {
 			entry.elt.style.display = 'block';
+		} else {
+			entry.elt.style.display = 'none';
 		}
 	}
 };
@@ -34,4 +29,4 @@ book.onclick = (e) => {
 };
 
 const loader = document.getElementById('loader');
-loader.classList.add('hide');
+loader.style.display = 'none';

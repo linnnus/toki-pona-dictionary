@@ -17,6 +17,19 @@ body::-webkit-scrollbar {
 	display:none;
 }
 
+/* remove default highlighting in webkit browsers */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:focus,
+input:hover {
+	outline: none;
+  border: none;
+  background-color: white !important; /* does not work */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* workaround to set color */
+  -webkit-text-fill-color: black;
+}
+
 .content {
 	width: 100%;
 	max-width: 350px;
@@ -39,10 +52,6 @@ a {
 /* add a bit of spacing */
 .center {
   margin: 0 auto 0 auto;
-}
-
-.hide {
-	display: none !important;
 }
 
 /***************************** SPINNY THING ***********************************/
@@ -83,18 +92,13 @@ div.fab {
 	right: 16px;
 	bottom: 16px;
 	z-index: 5;
-
 	width: 56px;
 	height: 56px;
-
 	border: 3px solid var(--accent-color);
 	border-radius: 100%;
-
 	background-color: var(--main-color);
 	display: flex; /*somehow this makes the svg center-align properly*/
-
 	cursor: pointer;
-
 }
 
 svg.fab-svg {
@@ -142,43 +146,23 @@ svg.fab-svg {
 	color: black;
 }
 
-.search .submit {
+.search-icon {
 	background-color: white !important;
 	border: none;
 	padding: 0;
 	width: 13%;
 	height: 100%;
-
 	cursor: pointer;
+	display: flex;
 }
 
-.search .svg {
+.search-icon-svg {
 	outline: none;
 	fill: dimgrey;
 	width: 25px;
 	padding: inherit;
 	height: auto;
-}
-
-/* remove outline on focus */
-form:focus, input:focus {
-  outline: none;
-}
-
-/* remove default highlighting in webkit browsers */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: none;
-  background-color: white !important; /* does not work */
-  -webkit-box-shadow: 0 0 0px 1000px white inset; /* workaround to set color */
-  -webkit-text-fill-color: black;
+	margin: auto;
 }
 
 /******************************* ENTRIES **************************************/
@@ -218,39 +202,10 @@ select:-webkit-autofill:focus {
 	border-top: var(--accent-color) 2px solid;
 }
 
-footer > p.footer-content {
-	margin: 0;
-}
-
 /* keep footer at bottom */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 	margin: 0;
-}
-
-.theme-button {
-	background-color: var(--main-color);
-	border:2px solid var(--main-color);
-	border-radius: 3px;
-	display:inline-block;
-	cursor:pointer;
-	color:var(--text-color);
-	font-family:Arial;
-	font-size:13px;
-	font-weight:bold;
-	padding:6px 12px;
-	text-decoration:none;
-}
-.theme-button:hover {
-	filter:brightness(85%);
-}
-.theme-button:active {
-	position:relative;
-	top:1px;
-	outline: none;
-}
-.theme-button:focus {
-	outline: none;
 }
