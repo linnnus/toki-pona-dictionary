@@ -50,9 +50,9 @@ searchForm.onsubmit = (e) => {
 	const reg = new RegExp(`\\b${escapeReg(searchText.value)}\\b`, 'iu');
 	for (const entry of entries) {
 		if (!findMatch(reg, entry)) {
-			entry.elt.classList.add('hide');
+			entry.elt.style.display = 'none';
 		} else {
-			entry.elt.classList.remove('hide');
+			entry.elt.style.display = 'block';
 		}
 	}
 };
