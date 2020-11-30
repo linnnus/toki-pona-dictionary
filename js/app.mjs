@@ -19,6 +19,9 @@ searchText.oninput = (e) => {
 		}
 	}
 };
+searchText.onchange = (e) => {
+	e.target.blur();
+}
 
 const book = document.getElementById('book');
 book.onclick = (e) => {
